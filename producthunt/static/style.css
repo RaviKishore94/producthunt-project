@@ -1,0 +1,45 @@
+.navbar .container .navbar-brand img {
+	height: 50px;
+  width: 50px;
+}
+
+i {
+  color: red;
+  font-size: 25px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.form-signup, .form-login, .form-create{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+.form-signup .form-control, .form-login .form-control, .form-create .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus, .form-login .form-control:focus, .form-create .form-control:focus {
+  z-index: 2;
+}
+.form-signup input[type="text"], .form-login input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signup input[type="password"], .form-login input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-create input[type="text"], .form-create textarea, .form-create input[type="url"], .form-create .custom-file-icon input[type="file"], .form-create .custom-file-image input[type="file"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

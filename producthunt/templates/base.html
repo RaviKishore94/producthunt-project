@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Ravi Kishore">
+    <meta name="generator" content="Ravi Kishore">
+    <title> Product Hunt</title>
+    <link rel="icon" href="{% static 'ProductHunt.png' %}"/>
+    <meta name="theme-color" content="#563d7c">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome-icons/css/all.min.css' %}">
+  </head>
+
+  <body>
+  	<header>
+	    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+	    	<div class="container">
+		  	  <a class="navbar-brand" href="{% url 'home' %}"><img class="d-inline-block" src="{% static 'ProductHunt.png' %}"> <b>Product Hunt</b></a>
+		  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		  	    <span class="navbar-toggler-icon"></span>
+		  	  </button>
+		  	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		  	    <div class="navbar-nav ml-auto">
+		  	      {% if user.is_authenticated %}
+		  	      <a class="nav-item nav-link" href="{% url 'create' %}"><i class="fas fa-plus"></i></a>
+		  	      <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+		  	      <form id="logout" method="POST" action="{% url 'logout' %}">
+		  	      	{% csrf_token %}
+		  	      	<input type="hidden">
+		  	      </form>
+		  	      {% else %}
+		  	      <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+		  	      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+		  	      {% endif %}
+		  	    </div>
+		  	  </div>
+	  	  	</div>
+		</nav>
+	</header>
+
+	<br/>
+
+	<div class="container">
+	    {% block content %}
+		{% endblock %}
+	</div>
+
+    <br/><br/>
+
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p>Have a Happy {% now 'Y' %}</p>
+    </div>
+  </footer>
+
+</html>
