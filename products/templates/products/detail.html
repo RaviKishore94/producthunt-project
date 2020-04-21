@@ -16,9 +16,16 @@
 		<img src="{{ product.image.url }}" class="img-fluid"/>
 	</div>
 	<div class="col-4">
+		{% if not restrict %}
 		<a href="javascript:{document.getElementById('upvote').submit()}">
 			<button class="btn btn-primary btn-block btn-lg"><span class="fas fa-angle-up"></span> Upvote {{ product.votes_total }}</button>
 		</a>
+		{% else %}
+		<a href="javascript:{document.getElementById('upvote').submit()}">
+			<button disabled class="restrict btn btn-primary btn-block btn-lg"><span class="fas fa-angle-up"></span> Upvote {{ product.votes_total }}</button>
+		</a>
+		<b>{{ restrict }}</b>
+		{% endif %}
 	</div>
 </div>
 

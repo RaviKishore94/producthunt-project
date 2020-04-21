@@ -12,6 +12,10 @@ i {
   cursor: pointer;
 }
 
+.restrict {
+  cursor: default;
+}
+
 .form-signup, .form-login, .form-create{
   width: 100%;
   max-width: 330px;
@@ -37,7 +41,6 @@ i {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 .form-create input[type="text"], .form-create textarea, .form-create input[type="url"], .form-create .custom-file-icon input[type="file"], .form-create .custom-file-image input[type="file"] {
   margin-bottom: -1px;
   border-top-left-radius: 0;

@@ -7,4 +7,4 @@ class Votes(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 	def __str__(self):
-		return self.voter + ' voted ' + self.products
+		return self.voter.username + ' voted ' + self.product.title
